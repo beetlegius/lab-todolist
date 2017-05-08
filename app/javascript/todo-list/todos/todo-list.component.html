@@ -1,0 +1,36 @@
+<h1 class="display4">Todo-List</h1>
+<hr />
+
+<form (submit)="add()" [formGroup]="todoForm" autocomplete="off" class="form-inline">
+  <div class="form-group">
+    <label for="todo_name" class="sr-only">Name</label>
+    <input autofocus formControlName="name" id="todo_name" placeholder="Name" class="form-control mb-2 mr-sm-2 mb-sm-0" type="text" [(ngModel)]="todo.name" />
+  </div>
+  <button class="btn btn-success" [disabled]="!todoForm.valid" type="submit">Add</button>
+</form>
+
+<hr />
+<table class="table">
+  <thead class="thead-inverse">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Checked</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos$ | async" [class.table-success]="todo.checked">
+      <th scope="row">{{todo.id}}</th>
+      <td>{{todo.name}}</td>
+      <td>
+        <i [class.check]="!todo.checked" [class.fa-square-o]="!todo.checked" [class.fa-check-square-o]="todo.checked" class="fa fa-fw" (click)="check(todo)"></i>
+      </td>
+      <td>
+        <button type="button" (click)="destroy(todo)" class="btn btn-sm btn-danger">
+          <i class="fa fa-trash fa-fw"></i> Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
