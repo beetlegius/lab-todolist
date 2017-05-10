@@ -2,7 +2,7 @@
 VENDOR_PATH = File.expand_path('..', __dir__)
 Dir.chdir(VENDOR_PATH) do
   begin
-    exec "yarnpkg #{ARGV.join(" ")}"
+    exec "yarn #{ARGV.join(" ")}"
   rescue Errno::ENOENT
     $stderr.puts "A VER LA CONCHA DE TU MADRE DONDE ESTA YARN"
     $stderr.puts `which yarnpkg`

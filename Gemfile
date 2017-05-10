@@ -65,5 +65,4 @@ gem 'foreman'
 gem 'capistrano-rails'
 gem 'capistrano-rbenv'
 gem 'capistrano3-puma'#, git: "https://github.com/seuros/capistrano-puma.git"
-gem 'capistrano-yarn'
 gem 'whenever', require: false
