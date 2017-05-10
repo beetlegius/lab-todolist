@@ -5,6 +5,8 @@ set :application, "todolist"
 set :repo_url, "git@github.com:beetlegius/lab-todolist.git"
 set :rbenv_ruby, '2.4.0'
 
+set :node_binary, "/usr/bin/nodejs"
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
