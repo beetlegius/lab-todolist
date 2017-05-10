@@ -37,3 +37,6 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/drag
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+
+# Skip migration if files in db/migrate were not modified
+set :conditionally_migrate, true
