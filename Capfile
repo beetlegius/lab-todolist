@@ -38,8 +38,6 @@ require 'capistrano/puma'
 install_plugin Capistrano::Puma
 install_plugin Capistrano::Puma::Nginx
 
-require "capistrano/node-deploy"
-
 set :whenever_command, "bundle exec whenever"
 require "whenever/capistrano"
 

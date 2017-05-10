@@ -5,8 +5,6 @@ set :application, "todolist"
 set :repo_url, "git@github.com:beetlegius/lab-todolist.git"
 set :rbenv_ruby, '2.4.0'
 
-set :node_binary, "/usr/bin/nodejs"
-
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -36,6 +34,7 @@ append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/drag
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
+set :default_env, { path: "$PATH:/home/beetlegius/.nvm/versions/node/v7.10.0/bin" }
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
