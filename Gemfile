@@ -21,6 +21,8 @@ gem 'webpacker'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'dalli'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -59,3 +61,8 @@ gem 'active_model_serializers'
 gem 'cancancan'
 
 gem 'foreman'
+
+gem 'capistrano-rails'
+gem 'capistrano-rbenv'
+gem 'capistrano3-puma'#, git: "https://github.com/seuros/capistrano-puma.git"
+gem 'whenever', require: false
