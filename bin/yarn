@@ -5,9 +5,9 @@ Dir.chdir(VENDOR_PATH) do
     exec "yarnpkg #{ARGV.join(" ")}"
   rescue Errno::ENOENT
     $stderr.puts "A VER LA CONCHA DE TU MADRE DONDE ESTA YARN"
-    exec `which node`
-    exec `which yarn`
-    exec `which yarnpkg`
+    exec "which node"
+    exec "which yarn"
+    exec "which yarnpkg"
     $stderr.puts "Yarn executable was not detected in the system."
     $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
     exit 1
