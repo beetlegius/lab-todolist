@@ -17,3 +17,16 @@
  */
 
 a, button, i.check { cursor: pointer; }
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+h1.loading {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+}

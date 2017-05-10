@@ -10,7 +10,9 @@
 </form>
 
 <hr />
-<table class="table">
+
+<p class="lead" *ngIf="(todos$ | async)?.length == 0">There are no todos now...</p>
+<table class="table" *ngIf="(todos$ | async)?.length > 0">
   <thead class="thead-inverse">
     <tr>
       <th>#</th>
@@ -20,17 +22,19 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let todo of todos$ | async" [class.table-success]="todo.checked">
-      <th scope="row">{{todo.id}}</th>
-      <td>{{todo.name}}</td>
-      <td>
-        <i [class.check]="!todo.checked" [class.fa-square-o]="!todo.checked" [class.fa-check-square-o]="todo.checked" class="fa fa-fw" (click)="check(todo)"></i>
-      </td>
-      <td>
-        <button type="button" (click)="destroy(todo)" class="btn btn-sm btn-danger">
-          <i class="fa fa-trash fa-fw"></i> Delete
-        </button>
-      </td>
-    </tr>
+    <ng-template ngFor let-todo [ngForOf]="todos$ | async">
+      <tr [class.table-success]="todo.checked">
+        <th scope="row">{{todo.id}}</th>
+        <td>{{todo.name}}</td>
+        <td>
+          <i [class.check]="!todo.checked" [class.fa-square-o]="!todo.checked" [class.fa-check-square-o]="todo.checked" class="fa fa-fw" (click)="check(todo)"></i>
+        </td>
+        <td>
+          <button type="button" (click)="destroy(todo)" class="btn btn-sm btn-danger">
+            <i class="fa fa-trash fa-fw"></i> Delete
+          </button>
+        </td>
+      </tr>
+    </ng-template>
   </tbody>
 </table>

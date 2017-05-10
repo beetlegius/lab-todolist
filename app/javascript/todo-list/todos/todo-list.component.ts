@@ -25,11 +25,7 @@ export class TodoListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.todos$ = this.store.select('todos')
-
-    this.service.all().subscribe(
-      (todos) => this.store.dispatch({ type: ADD_TODO, payload: todos })
-    )
+    this.todos$ = this.service.todos
 
     this.todoForm = this.fb.group({
       name: ['', Validators.required]
@@ -49,17 +45,12 @@ export class TodoListComponent implements OnInit {
     if (todo.checked)
       return
     todo.checked = true
-    this.service.update(todo).subscribe(
-      (todo) => this.store.dispatch({ type: UPDATE_TODO, payload: todo })
-    )
+    this.service.update(todo).subscribe( (todo) => this.store.dispatch({ type: UPDATE_TODO, payload: todo }) )
   }
 
   public destroy(todo: Todo) : void {
-    if (confirm('¿Are you sure?')) {
-      this.service.destroy(todo).subscribe(
-        (todo) => this.store.dispatch({ type: DELETE_TODO, payload: todo })
-      )
-    }
+    if (confirm('¿Are you sure?'))
+      this.service.destroy(todo).subscribe( (todo) => this.store.dispatch({ type: DELETE_TODO, payload: todo }) )
   }
 
 }
