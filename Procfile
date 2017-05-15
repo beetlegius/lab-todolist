@@ -1,2 +1,1 @@
-web: ./bin/rails s
-hot: ./bin/webpack-dev-server
+web: bundle exec rails s -P $PORT
