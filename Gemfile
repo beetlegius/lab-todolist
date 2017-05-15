@@ -66,8 +66,3 @@ gem 'active_model_serializers'
 gem 'cancancan'
 
 gem 'foreman'
-
-gem 'capistrano-rails'
-gem 'capistrano-rbenv'
-gem 'capistrano3-puma'#, git: "https://github.com/seuros/capistrano-puma.git"
-gem 'whenever', require: false
