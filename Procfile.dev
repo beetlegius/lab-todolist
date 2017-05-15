@@ -1,2 +1,2 @@
-web: ./bin/rails s
+web: ./bin/rails s -P $PORT
 hot: ./bin/webpack-dev-server
